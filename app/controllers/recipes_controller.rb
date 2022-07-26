@@ -13,11 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipes = Recipe.find(params[:id])
-  end
-
-  def public_recipes
-    @recipes = Recipe.where(public: true)
+    @recipe = User.find(params[:user_id]).recipes.find(params[:id])
   end
 
   def destroy
