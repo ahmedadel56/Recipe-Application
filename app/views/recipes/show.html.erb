@@ -1,1 +1,7 @@
-<h2>Show me a spacific recipe</h2>
+<h2>Selected Recipe</h2>
+
+<div>
+  <%= render 'shared/recipe_show' %>
+</div>
+
+<%= link_to 'Back to recipes', user_recipes_path(@recipe.user.id) %>
