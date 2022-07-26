@@ -7,4 +7,3 @@ class PublicRecipesController < ApplicationController
     @recipe = Recipe.includes([:user]).find(params[:id])
   end
 end
-
