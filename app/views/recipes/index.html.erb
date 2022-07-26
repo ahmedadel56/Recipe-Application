@@ -1,1 +1,13 @@
 <h2>Hello this is the list of Recipes</h2>
+
+<% @user.recipes.each do |recipe| %>
+  <div class="recipe">
+    <%= recipe.name %>
+    
+    <%=button_to 'Remove', {:controller => :recipes, :action => 'destroy', :id => recipe.id}, :method => :delete %>
+
+  </div>
+  <div class="description">
+    <%= recipe.description %>
+  </div>
+<% end %>
