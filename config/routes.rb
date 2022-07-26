@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     end
   end 
   get '/recipes', to: 'recipes#index'
-  get '/public_recipes', to: 'recipes#public_recipes'
+  get '/public_recipes', to: 'public_recipes#index'
 end
