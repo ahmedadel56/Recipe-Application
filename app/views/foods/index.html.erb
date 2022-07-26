@@ -1,1 +1,21 @@
 <h2>Hello this is the list of Food</h2>
+    <button><%= link_to "Add Food", new_user_food_path(@user.id) %></button>
+<table border = "1">
+  <tr style="border: 1px solid">
+    <th>Food</th>
+    <th>Measurement Unit</th>
+    <th>Unit Pirice</th>
+    <th>Actions</th>
+  </tr>
+    <% @foods.each do |food| %>
+      <tr style="border: 1px solid">
+        <td><%= food.name %></td>
+        <td><%= food.measurement_unit %></td>
+        <td>$<%= food.price %></td>
+        <td>
+            <%=button_to 'Delete Food', {:controller => :foods, :action => 'destroy', :id => food.id}, :method => :delete %> 
+        </td>
+      
+      </tr>
+    <% end %>
+</table>
