@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipes = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   def public_recipes
