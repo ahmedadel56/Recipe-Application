@@ -1,1 +1,6 @@
-<h2>Show me a spacific recipe</h2>
+<h2><%= @recipe.name %></h2>
+<h3>Preparation time: <span><%= @recipe.preparation_time %></span></h3>
+<h3>Public: <%= @recipe.public %></h3>
+<h3>Cooking time <span><%= @recipe.cooking_time %></span></h3>
+<p><%= @recipe.description %></p>
+

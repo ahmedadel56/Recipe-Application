@@ -2,7 +2,8 @@
 
 <% @user.recipes.each do |recipe| %>
   <div class="recipe">
-    <%= recipe.name %>
+  
+   <a href= <%=user_recipe_path(@user.id,recipe.id)%> >  <%= recipe.name %></a>
     
     <%=button_to 'Remove', {:controller => :recipes, :action => 'destroy', :id => recipe.id}, :method => :delete %>
 
