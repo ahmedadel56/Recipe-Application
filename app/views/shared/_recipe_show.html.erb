@@ -1,13 +1,12 @@
 <div>
   <div>
     <h3><%= @recipe.name %></h3>
-    <%= button_to 'Remove', { :controller => :recipes, :action => 'destroy', :id => @recipe.id }, :method => :delete %>
   </div>
   <div>
-    <p><%= @recipe.preparation_time %>hr</p>
-    <p><%= @recipe.cooking_time %>hr</p>
-  </div>
-  <p>Publicly available: <%= @recipe.public %></p>
+    <p>Preparation time:<%= @recipe.preparation_time %>hr</p>
+    </div>
+    <p>Public: <%= @recipe.public %></p>
+    <p>Cooking time: <%= @recipe.cooking_time %>hr</p>
   <div>
     <p><%= @recipe.description %></p>
   </div>
