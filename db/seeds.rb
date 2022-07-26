@@ -18,3 +18,13 @@ recipes = Recipe.create([
   {name: "Recipe 7", description: "This is the description of Recipe 7", preparation_time: 7.5, cooking_time: 8.5, public: false, user_id: 3},
   {name: "Recipe 8", description: "This is the description of Recipe 8", preparation_time: 8.5, cooking_time: 9.5, public: false, user_id: 4},
 ])
+   @count = 1
+5.times do |user|
+   user = User.create(name: "Ahmed #{@count}", id: @count)
+   @count +=1
+end
+Food.create(name: 'Koshary', measurement_unit: "gram", price: 2.5, quantity: 2.7,user_id: 1 )
+Food.create(name: 'Tameya', measurement_unit: "gram", price: 6.6, quantity: 3.1,user_id: 1 )
+Food.create(name: 'Tarab', measurement_unit: "gram", price: 22.5, quantity: 1.7,user_id: 1 )
+Food.create(name: 'flafel', measurement_unit: "gram", price: 25.3, quantity: 2.1,user_id: 1 )
+Food.create(name: 'fool', measurement_unit: "gram", price: 2.5, quantity: 2.7,user_id: 1 )
