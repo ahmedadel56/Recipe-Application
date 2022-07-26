@@ -1,1 +1,11 @@
 <h2>Here we are going to create new food</h2>
+
+<%= form_with model: @food , url:user_foods_path ,scope: :data do |form| %>
+		<%= form.label :name, "Title", class: "label" %>
+		<%= form.text_field :name, placeholder: "name", required: true %>
+		<%= form.text_field :measurement_unit, placeholder: "Unit", required: true %>
+		<%= form.text_field :price, placeholder: "Enter price", required: true %>
+		<%= form.text_field :quantity, placeholder: "Enter quantity", required: true %>
+        <%= form.submit "Add", class: "submit-btn" %>
+  </div>
+<% end %>
