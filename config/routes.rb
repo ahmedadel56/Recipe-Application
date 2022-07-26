@@ -8,5 +8,6 @@ Rails.application.routes.draw do
       resources :recipe_foods , only: [:index, :show, :new, :create, :destroy]
     end
   end 
+  get '/recipes', to: 'recipes#index'
   get '/public_recipes', to: 'recipes#public_recipes'
 end
