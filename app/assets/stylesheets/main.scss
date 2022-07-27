@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// NAVIGATION
+nav {
+  border: 2px solid red;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+}
+
+.nav-item {
+  list-style: none;
+  padding: 10px;
+  margin: 0 10px;
+  border: 1px solid rebeccapurple;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+// PUBLIC RECIPES
+.container {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.recipe-card {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  .recipe {
+    flex-basis: 35%;
+  }
+
+  .recipe-details {
+    flex-basis: 60%;
+  }
+}
+
+.card-link,
+.recipe-link {
+  text-decoration: none;
+}
+
+.add-recipe,
+.recipe-btn {
+  text-decoration: none;
+  float: right;
+  margin-bottom: 20px;
+  border: 1px solid blue;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.delete-btn {
+  border: none;
+  border-radius: 4px;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+}
+
+// NEW RECIPE
+.form {
+  border: 1px solid blue;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.field {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.field-label {
+  font-weight: bold;
+  font-size: 1rem;
+  flex-basis: 30%;
+}
+
+.field-input {
+  width: 100%;
+  flex-basis: 70%;
+  padding: 5px;
+}
+
+.public {
+  margin-right: 20px;
+}
