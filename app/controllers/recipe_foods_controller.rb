@@ -1,32 +1,32 @@
 class RecipeFoodsController < ApplicationController
   def index
     @foods = Food.all
-
+  end
   def public_recipes
     @recipes = Recipe.where(public: true)
   end
 
   def new
+    @foods = Food.all
     @recipe_food = RecipeFood.new
   end
 
   def show
-    @recipes = Recipe.find(params[:id])
+    # @recipes = Recipe.find(params[:id])
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @recipe = Recipe.find(params[:recipe_id])
-     @recipe_food =  @recipe.recipe_foods.new(
-      recipe_id: @recipe.id,
+     @recipe_food =  RecipeFood.new(
+      recipe_id: params[:recipe_id],
       food_id: recipe_food_params[:food_id],
       quantity: recipe_food_params[:quantity]
     )
 
     if @recipe_food.save
-      puts 'Success!'
+      flash[:notice] = 'Food saved successfully'
+      redirect_to user_recipes_path
     else
-      render :new, alert: 'Error occured!'
+      flash[:alert] = 'Food not saved'
     end
   end
 
@@ -34,7 +34,6 @@ class RecipeFoodsController < ApplicationController
     # this is the function of destroy
   end
   def recipe_food_params
-    params.require(:data).permit(:quantity,:food_id)
+    params.require(:data).permit(:food_id, :quantity)
   end
-end
 end

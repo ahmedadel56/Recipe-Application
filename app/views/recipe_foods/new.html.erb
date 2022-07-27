@@ -1,9 +1,9 @@
 <h2>Add new Recipe Food list</h2>
 
-<%= form_with model: @recipe_food, url: user_recipe_recipe_foods_path, scope: :data do |f| %>
+<%= form_with model: @recipe_food, url: user_recipe_recipe_foods_path,local: true, method: :post, scope: :data do |f| %>
   <p>
     <%= f.label :food_id %><br>
-      <%= f.select :food_id, Food.all.collect { |p| [ p.name, p.id ] }, required: true %>
+      <%= f.select :food_id, @foods.collect { |p| [ p.name, p.id ] }, required: true %>
   </p>
   <p>
   <%= f.label :quantity %>
