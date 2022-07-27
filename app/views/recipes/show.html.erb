@@ -1,6 +1,7 @@
-<h2><%= @recipe.name %></h2>
-<h3>Preparation time: <span><%= @recipe.preparation_time %></span></h3>
-<h3>Public: <%= @recipe.public %></h3>
-<h3>Cooking time <span><%= @recipe.cooking_time %></span></h3>
-<p><%= @recipe.description %></p>
+<h2>Selected Recipe</h2>
 
+<div>
+  <%= render 'shared/recipe_show' %>
+</div>
+
+<%= link_to 'Back to recipes', user_recipes_path(@recipe.user.id) %>

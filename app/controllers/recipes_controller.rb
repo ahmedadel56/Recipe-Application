@@ -9,15 +9,17 @@ class RecipesController < ApplicationController
   end
 
   def create
-    # I am just going to put comment here
+    @user = User.find(params[:user_id])
+    @new_recipe = @user.recipes.new(recipe_params)
+    if @new_recipe.save
+      redirect_to user_recipes_path, notice: 'succeded'
+    else
+      render :new
+    end
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
-  end
-
-  def public_recipes
-    @recipes = Recipe.where(public: true)
+    @recipe = User.find(params[:user_id]).recipes.find(params[:id])
   end
 
   def destroy
@@ -25,5 +27,12 @@ class RecipesController < ApplicationController
     @post.destroy
     flash[:notice] = 'Recipe removed successfully'
     redirect_to '/recipes'
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :preparation_time,
+                                   :cooking_time, :description, :public)
   end
 end
