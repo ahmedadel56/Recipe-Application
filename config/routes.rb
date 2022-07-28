@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   end 
   root "foods#index"
   get '/recipes', to: 'recipes#index'
+  match '/users/:user_id/recipes/:recipe_id/shopping_list', to: 'recipes#shopping_list', via: 'get'
   get '/public_recipes', to: 'public_recipes#index'
 end

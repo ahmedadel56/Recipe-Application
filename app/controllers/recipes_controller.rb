@@ -19,6 +19,14 @@ class RecipesController < ApplicationController
     end
   end
 
+  def shopping_list
+    @user = User.find(params[:user_id])
+    @recipe = @user.recipes.find(params[:recipe_id])
+    @recipe_foods = @recipe.recipe_foods.includes([:food])
+    @total = 0
+    @recipe_foods.each { |recipe_food| @total += recipe_food.value_result }
+  end
+
   def show
     @user = User.find(params[:user_id])
     @recipe = @user.recipes.find(params[:id])

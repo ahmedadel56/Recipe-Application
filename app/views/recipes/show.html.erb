@@ -6,6 +6,9 @@
 <div>
   <%= link_to "Add ingrediant" , new_user_recipe_recipe_food_path(recipe_id: @recipe.id)  %>
 </div>
+<div>
+  <%= link_to "See Shopping List",  "#{user_recipe_path(user_id: @user.id, id: @recipe.id)}/shopping_list"%>
+</div>
 <hr>
 <div>
 <table border =1>
