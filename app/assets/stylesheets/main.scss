@@ -4,6 +4,23 @@
   box-sizing: border-box;
 }
 
+// HOMEPAGE
+.home-btn-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.home-btn {
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border: 2px solid blue;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
 // NAVIGATION
 nav {
   border: 2px solid red;
@@ -34,6 +51,7 @@ nav {
 
 // PUBLIC RECIPES
 .container {
+  border: 2px solid red;
   max-width: 600px;
   width: 100%;
   display: flex;
@@ -42,7 +60,7 @@ nav {
   margin: 0 auto;
   padding: 20px;
 
-  h2 {
+  h1, h2 {
     text-align: center;
     margin-bottom: 20px;
   }
@@ -76,7 +94,8 @@ nav {
 }
 
 .add-recipe,
-.recipe-btn {
+.recipe-btn,
+.add-food {
   text-decoration: none;
   float: right;
   margin-bottom: 20px;
@@ -122,4 +141,28 @@ nav {
 
 .public {
   margin-right: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-btn,
+.signup-btn {
+  background-color: #2177e7;
+  border-radius: 4px;
+  padding: 3px 10px;
+  color: white;
+  border: none;
+  width: 70%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.25rem;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.shared-links {
+  text-align: right;
 }
