@@ -2,6 +2,7 @@ class RecipeFoodsController < ApplicationController
   def index
     @foods = Food.all
   end
+
   def public_recipes
     @recipes = Recipe.where(public: true)
   end
@@ -12,11 +13,11 @@ class RecipeFoodsController < ApplicationController
   end
 
   def show
-    # @recipes = Recipe.find(params[:id])
+    @recipe_food = RecipeFood.find(params[:id])
   end
 
   def create
-     @recipe_food =  RecipeFood.new(
+    @recipe_food = RecipeFood.new(
       recipe_id: params[:recipe_id],
       food_id: recipe_food_params[:food_id],
       quantity: recipe_food_params[:quantity]
@@ -31,8 +32,12 @@ class RecipeFoodsController < ApplicationController
   end
 
   def destroy
-    # this is the function of destroy
+    @recipe_food = RecipeFood.find(params[:id])
+    @recipe_food.destroy
+    flash[:notice] = 'Recipe removed successfully'
+    redirect_to user_recipes_path
   end
+
   def recipe_food_params
     params.require(:data).permit(:food_id, :quantity)
   end
