@@ -1,0 +1,19 @@
+<h2>Shopping List</h2>
+<div>Amount of food items to buy: <strong><%= @recipe_foods.count %></strong></div>
+<div>Total Value of food needed: $<strong><%= @total %></strong></div>
+
+<table border =1>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+  </tr>
+    <% @recipe_foods.each do |recipe_food| %>
+      <tr>
+         <td><%= recipe_food.food.name %></td>
+         <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+         <td><%= recipe_food.value_result %></td>
+      </tr>
+  <% end %>
+</table>
+<%= link_to 'Back to recipe', user_recipe_path(user_id: @user.id, id: @recipe.id) %>
