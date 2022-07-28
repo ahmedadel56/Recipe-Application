@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @user = User.find(params[:user_id])
     @foods = @user.foods.all
