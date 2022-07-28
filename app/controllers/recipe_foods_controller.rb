@@ -38,16 +38,18 @@ class RecipeFoodsController < ApplicationController
     flash[:notice] = 'Recipe removed successfully'
     redirect_to user_recipes_path
   end
+
   def edit
     @foods = Food.all
-    @recipe_food = RecipeFood.find(params[:id])   
+    @recipe_food = RecipeFood.find(params[:id])
   end
+
   def update
     @recipe_food = RecipeFood.find(params[:id])
     if @recipe_food.update(
       food_id: recipe_food_params[:food_id],
       quantity: recipe_food_params[:quantity]
-    )   
+    )
       redirect_to user_recipes_path
     else
       flash[:alert] = 'Food not Updated'
