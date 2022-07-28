@@ -11,7 +11,7 @@
 
 			<p class="field">
 				<%= form.label :measurement_unit, "Unit:", class: 'field-label' %>
-				<%= form.text_field :measurement_unit, placeholder: "Unit", required: true, class: 'field-input' %>
+				<%= form.select :measurement_unit, ['kg', 'g'], required: true, class: 'field-input' %>
 			</p>
 
 			<p class="field">

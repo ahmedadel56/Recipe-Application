@@ -23,7 +23,7 @@
 
 // NAVIGATION
 nav {
-  border: 2px solid red;
+  border-bottom: 2px solid red;
   height: 60px;
   width: 100%;
   display: flex;
@@ -51,7 +51,6 @@ nav {
 
 // PUBLIC RECIPES
 .container {
-  border: 2px solid red;
   max-width: 600px;
   width: 100%;
   display: flex;
@@ -60,7 +59,8 @@ nav {
   margin: 0 auto;
   padding: 20px;
 
-  h1, h2 {
+  h1,
+  h2 {
     text-align: center;
     margin-bottom: 20px;
   }
@@ -95,7 +95,10 @@ nav {
 
 .add-recipe,
 .recipe-btn,
-.add-food {
+.add-food,
+.shopping-btn,
+.ingredient-btn,
+.recipe-back-btn {
   text-decoration: none;
   float: right;
   margin-bottom: 20px;
@@ -124,6 +127,7 @@ nav {
   width: 100%;
   margin-bottom: 15px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -160,9 +164,47 @@ nav {
   text-decoration: none;
   font-size: 1.25rem;
   margin: 15px 0;
-  text-align: center;
 }
 
 .shared-links {
   text-align: right;
+}
+
+// RECIPE SHOW
+.recipe-show-container {
+  margin-bottom: 50px;
+
+  p {
+    margin-bottom: 12px;
+    font-size: 1.125rem;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.public-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.recipe-show-details,
+.recipe-show-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredient-table {
+  margin-top: 30px;
+  border: 1px solid blue;
+
+  table {
+    width: 100%;
+  }
+}
+
+.recipe-back-btn {
+  margin-top: 30px;
+  width: fit-content;
 }
