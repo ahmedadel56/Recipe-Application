@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
     @user = User.find(params[:user_id])
     @new_recipe = @user.recipes.new(recipe_params)
     if @new_recipe.save
-      redirect_to user_recipes_path, notice: 'succeded'
+      redirect_to user_recipe_path(user_id: current_user.id, id: @new_recipe.id), notice: 'succeded'
     else
       render :new
     end
@@ -34,8 +34,8 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @post = Recipe.find(params[:id])
-    @post.destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
     flash[:notice] = 'Recipe removed successfully'
     redirect_to '/recipes'
   end
