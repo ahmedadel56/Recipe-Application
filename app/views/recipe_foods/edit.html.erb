@@ -1,14 +1,18 @@
-<h2>Add new Recipe Food list</h2>
+<section class="container">
+  <h2>Update Recipe Food list</h2>
 
-<%= form_with model: @recipe_food, url: user_recipe_recipe_food_path,local: true, method: :patch, scope: :data do |f| %>
-  <p>
-    <%= f.label :food_id %><br>
-      <%= f.select :food_id, @foods.collect { |p| [ p.name, p.id ] }, required: true %>
-  </p>
-  <p>
-  <%= f.label :quantity %>
-  <%= f.text_field :quantity , required: true%>
-  </p>
-  
-  <p><%= f.submit %></p>
-<% end %>
+  <div class="form">
+    <%= form_with model: @recipe_food, url: user_recipe_recipe_food_path,local: true, method: :patch, scope: :data do |f| %>
+      <p class="field">
+        <%= f.label :food_id, class: 'field-label' %>
+        <%= f.select :food_id, @foods.collect { |p| [ p.name, p.id ] }, required: true %>
+      </p>
+      <p class="field">
+      <%= f.label :quantity, class: 'field-label' %>
+      <%= f.text_field :quantity , required: true, class: 'field-input' %>
+      </p>
+      
+      <p><%= f.submit 'Update Recipe Food', class: "add-food" %></p>
+    <% end %>
+  </div>
+</section>

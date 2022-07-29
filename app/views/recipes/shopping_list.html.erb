@@ -1,19 +1,24 @@
-<h2>Shopping List</h2>
-<div>Amount of food items to buy: <strong><%= @recipe_foods.count %></strong></div>
-<div>Total Value of food needed: $<strong><%= @total %></strong></div>
+<section class="container">
+  <h2>Shopping List</h2>
+  <div>Amount of food items to buy: <strong><%= @recipe_foods.count %></strong></div>
+  <div>Total Value of food needed: $<strong><%= @total %></strong></div>
 
-<table border =1>
-  <tr>
-    <th>Food</th>
-    <th>Quantity</th>
-    <th>Value</th>
-  </tr>
-    <% @recipe_foods.each do |recipe_food| %>
+  <div class="ingredient-table">
+    <table border =1>
       <tr>
-         <td><%= recipe_food.food.name %></td>
-         <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
-         <td><%= recipe_food.value_result %></td>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
       </tr>
-  <% end %>
-</table>
-<%= link_to 'Back to recipe', user_recipe_path(user_id: @user.id, id: @recipe.id) %>
+        <% @recipe_foods.each do |recipe_food| %>
+          <tr>
+            <td><%= recipe_food.food.name %></td>
+            <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+            <td>$ <%= recipe_food.value_result %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <%= link_to 'Back to recipes', user_recipe_path(user_id: @user.id, id: @recipe.id), class: 'recipe-back-btn' %>
+</section>

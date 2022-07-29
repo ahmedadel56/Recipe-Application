@@ -38,6 +38,12 @@ In your terminal, enter a git clone and past the link that you copied from the r
 
 `rails s`
 
+- Open `http://127.0.0.1:3000/` in your browser to use the app
+
+### Tests
+- Run `rspec` to run the tests
+
+
 ## Authors
 
 👤 **Ahmed Adel**
@@ -45,8 +51,7 @@ In your terminal, enter a git clone and past the link that you copied from the r
 - LinkedIn: [Ahmed Adel](https://www.linkedin.com/in/ahmed-adel56/)
 
 👤 **Selase**
-- GitHub: [Selase]()
-- LinkedIn: [Selase]()
+- GitHub: [@dewslyse](https://github.com/dewslyse)
 
 ## 🤝 Contributing
 

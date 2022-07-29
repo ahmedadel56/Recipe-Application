@@ -1,33 +1,40 @@
-<h2>Selected Recipe</h2>
+<section class="container">
+  <div>
+    <%= render 'shared/recipe_show' %>
+  </div>
 
-<div>
-  <%= render 'shared/recipe_show' %>
-</div>
-<div>
-  <%= link_to "Add ingrediant" , new_user_recipe_recipe_food_path(recipe_id: @recipe.id)  %>
-</div>
-<div>
-  <%= link_to "See Shopping List",  "#{user_recipe_path(user_id: @user.id, id: @recipe.id)}/shopping_list"%>
-</div>
-<hr>
-<div>
-<table border =1>
-  <tr>
-    <th>Food</th>
-    <th>Quantity</th>
-    <th>Value</th>
-    <th>Actions</th>
-  </tr>
-    <% @recipe_foods.each do |recipe_food| %>
+  <div class="recipe-show-btns">
+    <div>
+      <%= link_to "See Shopping List",  "#{user_recipe_path(user_id: @user.id, id: @recipe.id)}/shopping_list", class: 'shopping-btn' %>
+    </div>
+    <div>
+      <%= link_to "Add ingrediant" , new_user_recipe_recipe_food_path(recipe_id: @recipe.id), class: 'ingredient-btn' %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="ingredient-table">
+    <table border =1>
       <tr>
-         <td><%= recipe_food.food.name %></td>
-         <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
-         <td><%= recipe_food.value_result %></td>
-          <td> <%= link_to 'Modify', edit_user_recipe_recipe_food_path(@user.id,@recipe.id,recipe_food.id)  %>  <%=button_to 'Delete', user_recipe_recipe_food_path(@user.id,@recipe.id,recipe_food.id,),method: :delete %> </td>  
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
       </tr>
-  <% end %>
-</table>
+        <% @recipe_foods.each do |recipe_food| %>
+          <tr>
+            <td><%= recipe_food.food.name %></td>
+            <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+            <td><%= recipe_food.value_result %></td>
+              <td class="action-btns">
+                <%= link_to 'Modify', edit_user_recipe_recipe_food_path(@user.id,@recipe.id,recipe_food.id) %>
+                <%=button_to 'Delete', user_recipe_recipe_food_path(@user.id,@recipe.id,recipe_food.id,),method: :delete, class: 'delete-btn' %> 
+              </td>  
+          </tr>
+      <% end %>
+    </table>
+  </div>
 
-</div>
-
-<%= link_to 'Back to recipes', user_recipes_path(@recipe.user.id) %>
+  <%= link_to 'Back to recipes', user_recipes_path(@recipe.user.id), class: 'recipe-back-btn' %>
+</section>

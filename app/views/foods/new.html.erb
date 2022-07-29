@@ -1,10 +1,27 @@
-<h2>Here we are going to create new food</h2>
+<section class="container">
+	<h2>Add New Food</h2>
 
-<%= form_with model: @food , url:user_foods_path ,scope: :data do |form| %>
-		<%= form.label :name, "Title", class: "label" %>
-		<%= form.text_field :name, placeholder: "name", required: true %>
-		<%= form.text_field :measurement_unit, placeholder: "Unit", required: true %>
-		<%= form.text_field :price, placeholder: "Enter price", required: true %>
-        <%= form.submit "Add", class: "submit-btn" %>
-  </div>
-<% end %>
+	<div class="form">
+		<%= form_with model: @food , url:user_foods_path ,scope: :data do |form| %>
+
+			<p class="field">
+				<%= form.label :name, "Food:", class: 'field-label' %>
+				<%= form.text_field :name, placeholder: "name", required: true, class: 'field-input' %>
+			</p>
+
+			<p class="field">
+				<%= form.label :measurement_unit, "Unit:", class: 'field-label' %>
+				<%= form.select :measurement_unit, ['kg', 'g'], required: true, class: 'field-input' %>
+			</p>
+
+			<p class="field">
+				<%= form.label :price, "Price:", class: 'field-label' %>
+				<%= form.text_field :price, placeholder: "Enter price", required: true, class: 'field-input' %>
+			</p>
+
+			<div>
+				<%= form.submit "Add", class: "add-food" %>
+			</div>
+		<% end %>
+	</div>
+</section>
