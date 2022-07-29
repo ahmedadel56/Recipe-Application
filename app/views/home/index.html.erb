@@ -2,7 +2,8 @@
   <h1 class="caption">Welcome to the Recipe App</h1>
   <div>
     <div class="home-btn-container">
-      <%= image_tag "recipe.png", height: 360 %>
+      <%= link_to 'Login', new_user_session_path, class: 'home-btn' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'home-btn' %>
     </div>
   </div>
 </section>
