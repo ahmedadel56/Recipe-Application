@@ -1,6 +1,5 @@
 # Ruby on Rails Grannys Recipe Team project
-
-## Live Demo
+In this project user can register, make his food list, make desired recipes, get his shopping list with recipe food items and total price 
 
 ## Built with
 - Ruby
