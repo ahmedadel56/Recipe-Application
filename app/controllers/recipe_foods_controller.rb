@@ -26,7 +26,7 @@ class RecipeFoodsController < ApplicationController
 
     if @recipe_food.save
       flash[:notice] = 'Food saved successfully'
-      redirect_to user_recipes_path
+      redirect_to user_recipe_path(user_id: current_user.id, id: params[:recipe_id])
     else
       flash[:alert] = 'Food not saved'
     end
@@ -36,7 +36,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.find(params[:id])
     @recipe_food.destroy
     flash[:notice] = 'Recipe removed successfully'
-    redirect_to user_recipes_path
+    redirect_to user_recipe_path(user_id: current_user.id, id: params[:recipe_id])
   end
 
   def edit
@@ -50,7 +50,7 @@ class RecipeFoodsController < ApplicationController
       food_id: recipe_food_params[:food_id],
       quantity: recipe_food_params[:quantity]
     )
-      redirect_to user_recipes_path
+      redirect_to user_recipe_path(user_id: current_user.id, id: params[:recipe_id])
     else
       flash[:alert] = 'Food not Updated'
     end
