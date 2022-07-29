@@ -27,7 +27,10 @@
             <td><%= recipe_food.food.name %></td>
             <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
             <td><%= recipe_food.value_result %></td>
-              <td><%=button_to 'Delete', user_recipe_recipe_food_path(@user.id,@recipe.id,recipe_food.id,),method: :delete %> </td>  
+              <td class="action-btns">
+                <%= link_to 'Modify', edit_user_recipe_recipe_food_path(@user.id,@recipe.id,recipe_food.id) %>
+                <%=button_to 'Delete', user_recipe_recipe_food_path(@user.id,@recipe.id,recipe_food.id,),method: :delete, class: 'delete-btn' %> 
+              </td>  
           </tr>
       <% end %>
     </table>

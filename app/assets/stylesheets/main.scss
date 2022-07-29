@@ -202,6 +202,12 @@ nav {
   table {
     width: 100%;
   }
+
+  .action-btns {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+  }
 }
 
 .recipe-back-btn {
