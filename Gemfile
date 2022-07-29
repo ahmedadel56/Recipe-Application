@@ -64,7 +64,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
@@ -78,5 +77,5 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'database_cleaner-active_record'
+  gem 'database_cleaner'
 end
