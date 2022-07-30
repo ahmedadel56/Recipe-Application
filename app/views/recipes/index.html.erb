@@ -1,0 +1,22 @@
+<section class="container">
+  <h2>User Recipes</h2>
+  <div>
+    <%= link_to 'Add Recipe', new_user_recipe_path(user_id: @user.id), class: "add-recipe" %>
+  </div>
+
+  <% @user.recipes.each do |recipe| %>
+    <div class="recipe-card">
+      <div class="recipe">
+        <h3>
+          <%= link_to recipe.name, user_recipe_path(user_id: @user.id, id: recipe.id), class: "recipe-link" %>
+        </h3>  
+        <div>
+          <%= button_to 'Remove', {:controller => :recipes, :action => 'destroy', :id => recipe.id}, :method => :delete, class: 'delete-btn' %>
+        </div>
+      </div>
+      <div class="recipe-details">
+      <%= link_to recipe.description, user_recipe_path(user_id: @user.id, id: recipe.id), class: "recipe-link" %>
+      </div>
+    </div>
+  <% end %>
+</section>

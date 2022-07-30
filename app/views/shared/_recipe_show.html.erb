@@ -1,0 +1,12 @@
+  <h2><%= @recipe.name %></h2>
+
+  <div class="recipe-show-container">
+    <div class="recipe-show-details">
+      <p>Preparation time: <span><%= @recipe.preparation_time %></span> hr</p>
+      <p class="public-toggle">Public  <%= image_tag "on-button.png", height: 32 %></p>
+    </div>
+
+    <p>Cooking time: <span><%= @recipe.cooking_time %></span> hr</p>
+
+    <p><%= @recipe.description %></p>
+  </div>

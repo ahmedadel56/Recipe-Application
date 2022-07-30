@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// HOMEPAGE
+.home-btn-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.home-btn {
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border: 2px solid blue;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+// NAVIGATION
+nav {
+  border-bottom: 2px solid red;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+}
+
+.nav-item {
+  list-style: none;
+  padding: 10px;
+  margin: 0 10px;
+  border: 1px solid rebeccapurple;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+// PUBLIC RECIPES
+.container {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+
+  h1,
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.recipe-card {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  .recipe {
+    flex-basis: 35%;
+  }
+
+  .recipe-details {
+    flex-basis: 60%;
+  }
+}
+
+.card-link,
+.recipe-link {
+  text-decoration: none;
+}
+
+.add-recipe,
+.recipe-btn,
+.add-food,
+.shopping-btn,
+.ingredient-btn,
+.recipe-back-btn {
+  text-decoration: none;
+  float: right;
+  margin-bottom: 20px;
+  border: 1px solid blue;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.delete-btn {
+  border: none;
+  border-radius: 4px;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+}
+
+// NEW RECIPE
+.form {
+  border: 1px solid blue;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.field {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.field-label {
+  font-weight: bold;
+  font-size: 1rem;
+  flex-basis: 30%;
+}
+
+.field-input {
+  width: 100%;
+  flex-basis: 70%;
+  padding: 5px;
+}
+
+.public {
+  margin-right: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-btn,
+.signup-btn {
+  background-color: #2177e7;
+  border-radius: 4px;
+  padding: 3px 10px;
+  color: white;
+  border: none;
+  width: 70%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.25rem;
+  margin: 15px 0;
+}
+
+.shared-links {
+  text-align: right;
+}
+
+// RECIPE SHOW
+.recipe-show-container {
+  margin-bottom: 50px;
+
+  p {
+    margin-bottom: 12px;
+    font-size: 1.125rem;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.public-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.recipe-show-details,
+.recipe-show-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredient-table {
+  margin-top: 30px;
+  border: 1px solid blue;
+
+  table {
+    width: 100%;
+  }
+
+  .action-btns {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+  }
+}
+
+.recipe-back-btn {
+  margin-top: 30px;
+  width: fit-content;
+}
+
+.other-links {
+  border: 1px solid burlywood;
+  padding: 10px;
+}
