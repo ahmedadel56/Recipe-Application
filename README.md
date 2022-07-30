@@ -1,6 +1,8 @@
 # Ruby on Rails Grannys Recipe Team project
 In this project user can register, make his food list, make desired recipes, get his shopping list with recipe food items and total price 
 
+## Live Demo
+[Click here](https://desolate-wave-71779.herokuapp.com/)
 ## Built with
 - Ruby
 - Ruby on Rails
@@ -17,13 +19,13 @@ In this project user can register, make his food list, make desired recipes, get
 ## Installation
 1 - On Github, on the main page of the RoR-blog, click the Code button and copy "Clone with HTTPS" by clicking the copy icon.
 In your terminal, enter a git clone and past the link that you copied from the repository, and press the   Enter
-(e.g. git clone https://github.com/ahmedadel56/recipe-app.git).
+(e.g. git clone https://github.com/ahmedadel56/Recipe-Application.git).
 
 - To get a local copy up and running follow these steps.
 
 2 - open your terminal and clone the project running 
 
-`git clone https://github.com/ahmedadel56/recipe-app.git`
+`git clone https://github.com/ahmedadel56/Recipe-Application.git`
 
 3 - install all the gems running
 
